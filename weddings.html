@@ -1,0 +1,357 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Love Blossoms - Luxury Wedding Decor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#e9bacd",
+                        "on-tertiary-fixed-variant": "#910030",
+                        "tertiary": "#b52045",
+                        "surface-bright": "#fbf9f4",
+                        "surface-tint": "#735c00",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffd8e7",
+                        "inverse-surface": "#30312e",
+                        "on-primary-container": "#554300",
+                        "background": "#fbf9f4",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-container": "#ff94a1",
+                        "on-background": "#1b1c19",
+                        "primary": "#735c00",
+                        "secondary": "#795465",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e4e2dd",
+                        "outline-variant": "#d0c5af",
+                        "tertiary-fixed-dim": "#ffb2ba",
+                        "tertiary-fixed": "#ffd9dc",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-tertiary-fixed": "#400010",
+                        "surface": "#fbf9f4",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-container": "#795465",
+                        "secondary-container": "#fdcde1",
+                        "outline": "#7f7663",
+                        "on-tertiary-container": "#8e002f",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-surface-variant": "#4d4635",
+                        "on-secondary-fixed-variant": "#5f3c4d",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#d4af37",
+                        "surface-container-high": "#eae8e3",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#e9c349",
+                        "on-secondary-fixed": "#2e1221",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-container": "#f0eee9",
+                        "primary-fixed-dim": "#e9c349"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Montserrat"],
+                        "label-sm": ["Montserrat"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "headline-sm": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "48px", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 40px rgba(115, 92, 0, 0.08);
+        }
+
+        .gold-button {
+            background-color: #d4af37; /* primary-container approx for gradient feel */
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .gold-button:hover {
+            background-color: #735c00; /* primary */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(115, 92, 0, 0.2);
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(181, 32, 69, 0.08); /* Berry tinted */
+        }
+        
+        .img-hover-zoom img {
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-md dark:bg-black/10 shadow-sm dark:shadow-none bg-white/5 backdrop-blur-xl">
+<div class="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-display-lg text-headline-md text-primary dark:text-primary-fixed uppercase tracking-widest flex items-center gap-3" href="index.html">
+<img src="logo.jpg">
+<span class="">Creative Splash</span>
+</a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-body-md text-body-md hover:opacity-80 transition-opacity" href="weddings.html">Weddings</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-80 transition-opacity" href="balloons.html">Balloon Decor</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-80 transition-opacity" href="index.html#services">Birthdays</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-80 transition-opacity" href="index.html#about">About Us</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity font-body-md text-body-md" href="corporate_home.html">Corporate</a>
+</nav>
+<!-- Primary Action -->
+<div class="hidden md:block">
+<a class="gold-button font-label-md text-label-md px-6 py-3 rounded-full hover:opacity-80 transition-opacity" href="contact.html">Inquire Now</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden">
+<!-- Background Image with Parallax feel -->
+<div class="absolute inset-0 z-0">
+<img alt="A breathtaking, luxury wedding reception setup in Chennai with elegant floral arrangements, warm golden lighting, and sophisticated table settings. Professional photography, high-end event decor." class="w-full h-full object-cover object-center brightness-[0.85]" src="logo.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center text-white flex flex-col items-center">
+<div class="glass-panel p-8 md:p-16 rounded-[2rem] max-w-4xl w-full mx-auto animate-fade-in-up">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest mb-4 block">Love Blossoms</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary-fixed mb-6 drop-shadow-lg">
+                        Transforming Weddings with Captivating Decor
+                    </h1>
+<p class="font-body-lg text-body-lg text-surface-bright max-w-2xl mx-auto mb-10 opacity-90">
+                        Bespoke curation and meticulous attention to detail for your most cherished moments in Chennai and beyond.
+                    </p>
+<a class="inline-flex items-center gap-2 gold-button font-label-md text-label-md px-8 py-4 rounded-full text-lg shadow-xl" href="#book">
+<span class="">Book Your Dream Wedding</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Signature Services Section (Bento Grid) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest mb-2 block">Our Expertise</span>
+<h2 class="font-headline-md text-headline-md text-primary">Curated Experiences</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[300px]">
+<!-- Floral Decor (Large span) -->
+<div class="md:col-span-8 relative rounded-3xl overflow-hidden group img-hover-zoom ambient-shadow" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="Close up photography of a luxurious floral wedding arch featuring soft blush roses, white hydrangeas, and trailing green ivy. Warm, golden hour natural lighting highlighting the delicate petals. High-end, bespoke floral arrangement aesthetic, suitable for a luxury magazine editorial." src="logo.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white z-10 w-full glass-panel border-0 rounded-none bg-black/30" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<h3 class="font-headline-sm text-headline-sm mb-2">Bespoke Floral Decor</h3>
+<p class="font-body-md text-body-md opacity-90 max-w-md">Artisanal arrangements that breathe life and elegance into your venue, tailored to your unique palette.</p>
+</div>
+</div>
+<!-- Naming Ceremony -->
+<div class="md:col-span-4 relative rounded-3xl overflow-hidden group img-hover-zoom ambient-shadow bg-secondary-container flex flex-col justify-center p-8" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<div class="absolute top-4 right-4 bg-white/50 backdrop-blur-sm p-3 rounded-full text-secondary">
+<span class="material-symbols-outlined" data-icon="child_care" data-weight="fill">child_care</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-secondary-container mb-4 mt-8">Naming Ceremonies</h3>
+<p class="font-body-md text-body-md text-on-secondary-container/80">Delicate, joyous setups perfect for welcoming new life. Soft palettes and whimsical touches.</p>
+</div>
+<!-- Enchanting Themes -->
+<div class="md:col-span-12 relative rounded-3xl overflow-hidden group img-hover-zoom ambient-shadow flex items-center" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<div class="absolute inset-0 w-full h-full md:w-1/2">
+<img class="w-full h-full object-cover" data-alt="A wide shot of an enchanting outdoor wedding setup at twilight. Twinkling fairy lights strung across ancient trees, a majestic tent with sheer white draping, and crystal chandeliers casting a warm glow. Luxurious, magical, high-fashion event design aesthetic in a lush garden setting." src="logo.jpg">
+</div>
+<div class="relative z-10 md:ml-auto md:w-1/2 p-8 md:p-16 bg-surface-bright/95 backdrop-blur-lg h-full flex flex-col justify-center rounded-l-none md:rounded-l-3xl">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2 block">Immersive</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Enchanting Wedding Themes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">From grand royal affairs to intimate rustic celebrations, we design comprehensive environments that transport your guests into a cohesive narrative.</p>
+<a class="text-tertiary font-label-md text-label-md flex items-center gap-2 hover:opacity-80 transition-opacity w-fit" href="#portfolio">
+                            Explore Themes <span class="material-symbols-outlined text-sm" data-icon="arrow_right_alt">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Gallery (Asymmetric) -->
+<section class="py-24 bg-surface-container-low relative overflow-hidden" id="portfolio">
+<!-- Decorative subtle background blob -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-tertiary-fixed opacity-30 rounded-full blur-[100px] -z-10"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Chennai Portfolio</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A glimpse into our past creations. Elegant photography showcasing our meticulous execution and high-end aesthetic in premier venues across Chennai.</p>
+</div>
+<button class="border border-outline text-on-surface px-6 py-3 rounded-full font-label-md text-label-md hover:bg-surface-variant transition-colors">
+                        View Full Gallery
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Column 1 -->
+<div class="flex flex-col gap-8">
+<div class="rounded-2xl overflow-hidden ambient-shadow img-hover-zoom aspect-[3/4]" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<img class="w-full h-full object-cover" data-alt="A highly detailed close-up of a luxurious wedding table centerpiece. Tall crystal candelabras intertwined with lush white orchids and soft pink peonies. Crisp white linen, gold cutlery, and elegant glassware reflecting soft candlelight. High-end, sophisticated, rich texture." src="logo.jpg">
+</div>
+<div class="rounded-2xl overflow-hidden ambient-shadow img-hover-zoom aspect-square" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<img class="w-full h-full object-cover" data-alt="A grand wedding stage backdrop featuring cascading floral arrangements in deep rich reds and golds, set against a luxurious velvet drape. High key lighting highlighting the intricate details of the floral design. Professional event photography, premium feel." src="logo.jpg">
+</div>
+</div>
+<!-- Column 2 (Offset) -->
+<div class="flex flex-col gap-8 md:pt-12">
+<div class="rounded-2xl overflow-hidden ambient-shadow img-hover-zoom aspect-square" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<img class="w-full h-full object-cover" data-alt="An elegant entrance walkway for a luxury wedding. A tunnel of intertwined green foliage and subtle white fairy lights leading into a grand hall. Floor covered in a pristine white carpet scattered with fresh rose petals. Serene, inviting, and highly curated aesthetic." src="logo.jpg">
+</div>
+<div class="rounded-2xl overflow-hidden ambient-shadow img-hover-zoom aspect-[3/4]" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<img class="w-full h-full object-cover" data-alt="A beautifully styled seating arrangement for a sophisticated outdoor reception. Sleek gold chiavari chairs around round tables covered in blush pink silk overlays. Soft, dappled sunlight filtering through trees. Effortless luxury and clean, minimalist layout." src="logo.jpg">
+</div>
+</div>
+<!-- Column 3 -->
+<div class="flex flex-col gap-8">
+<div class="glass-panel rounded-2xl p-8 h-full flex flex-col justify-center items-center text-center" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<div class="w-16 h-16 rounded-full bg-secondary-container text-secondary flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-2xl" data-icon="diamond" data-weight="fill">diamond</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-4">Attention to Detail</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Every ribbon, every stem, placed with profound intention to create an atmosphere of effortless enchantment.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 relative" id="book">
+<div class="absolute inset-0 bg-secondary-fixed opacity-40 -z-10"></div>
+<div class="max-w-3xl mx-auto px-margin-mobile text-center">
+<span class="material-symbols-outlined text-5xl text-tertiary mb-6" data-icon="favorite" data-weight="fill">favorite</span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">Ready to Begin?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl mx-auto">
+                    Let us craft an unforgettable backdrop for your love story. Reach out to discuss your vision with our bespoke design team.
+                </p>
+<form class="glass-panel p-8 rounded-3xl max-w-lg mx-auto flex flex-col gap-4 text-left" style="opacity: 1; transform: translateY(0px); transition: opacity 0.8s ease-out, transform 0.8s ease-out;">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-2">Name</label>
+<input class="w-full bg-white border-none rounded-xl focus:ring-2 focus:ring-secondary-fixed-dim px-4 py-3 font-body-md shadow-sm" placeholder="Your full name" type="text">
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface block mb-2">Event Type</label>
+<select class="w-full bg-white border-none rounded-xl focus:ring-2 focus:ring-secondary-fixed-dim px-4 py-3 font-body-md shadow-sm text-on-surface-variant">
+<option>Wedding Decor</option>
+<option>Naming Ceremony</option>
+<option>Corporate Gala</option>
+</select>
+</div>
+<button class="gold-button font-label-md text-label-md py-4 rounded-xl mt-4 flex justify-center items-center gap-2" type="button">
+<span class="">Book Your Dream Wedding</span>
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full rounded-t-xl bg-surface-container-low dark:bg-inverse-surface shadow-[0_-10px_40px_rgba(115,92,0,0.08)] mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-16 max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col justify-center items-center md:items-start text-center md:text-left mb-8 md:mb-0">
+<a class="font-display-lg text-headline-sm text-on-surface dark:text-inverse-on-surface mb-4 flex items-center gap-2" href="index.html">
+<img src="logo.jpg">
+                     Creative Splash
+                </a>
+<p class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim">
+                    © 2024 Creative Splash. All rights reserved.
+                </p>
+</div>
+<!-- Links -->
+<div class="flex flex-col justify-center items-center md:items-start gap-4">
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Connect</h4>
+<nav class="flex flex-col gap-2 text-center md:text-left"><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-tertiary transition-colors duration-300 ease-in-out" href="https://instagram.com/creative_splash_event_planners">@creative_splash_event_planners</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-tertiary transition-colors duration-300 ease-in-out" href="mailto:creativesplashevpl@gmail.com">creativesplashevpl@gmail.com</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-tertiary transition-colors duration-300 ease-in-out" href="tel:09962664810">09962664810</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-tertiary transition-colors duration-300 ease-in-out" href="index.html">Privacy Policy</a></nav>
+</div>
+<!-- Decorative Element -->
+<div class="flex justify-center md:justify-end items-center mt-8 md:mt-0">
+<div class="w-16 h-16 rounded-full border border-primary/20 flex items-center justify-center text-primary/50 hover:bg-primary/5 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="arrow_upward">arrow_upward</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple subtle entrance animation for elements
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.ambient-shadow, .glass-panel').forEach((el) => {
+                if(!el.classList.contains('animate-fade-in-up')) {
+                    el.style.opacity = 0;
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                    observer.observe(el);
+                }
+            });
+        });
+    </script>
+
+
+</body></html>

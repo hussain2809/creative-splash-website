@@ -1,0 +1,493 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Creative Splash | Bespoke Event Planners</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#e9bacd",
+                        "on-tertiary-fixed-variant": "#910030",
+                        "tertiary": "#b52045",
+                        "surface-bright": "#fbf9f4",
+                        "surface-tint": "#735c00",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffd8e7",
+                        "inverse-surface": "#30312e",
+                        "on-primary-container": "#554300",
+                        "background": "#fbf9f4",
+                        "on-primary-fixed": "#241a00",
+                        "tertiary-container": "#ff94a1",
+                        "on-background": "#1b1c19",
+                        "primary": "#735c00",
+                        "secondary": "#795465",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e4e2dd",
+                        "outline-variant": "#d0c5af",
+                        "tertiary-fixed-dim": "#ffb2ba",
+                        "tertiary-fixed": "#ffd9dc",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-tertiary-fixed": "#400010",
+                        "surface": "#fbf9f4",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary-container": "#795465",
+                        "secondary-container": "#fdcde1",
+                        "outline": "#7f7663",
+                        "on-tertiary-container": "#8e002f",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-surface-variant": "#4d4635",
+                        "on-secondary-fixed-variant": "#5f3c4d",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#d4af37",
+                        "surface-container-high": "#eae8e3",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#e9c349",
+                        "on-secondary-fixed": "#2e1221",
+                        "surface-container-low": "#f5f3ee",
+                        "surface-container": "#f0eee9",
+                        "primary-fixed-dim": "#e9c349"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        base: "8px",
+                        gutter: "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Montserrat"],
+                        "label-sm": ["Montserrat"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "headline-sm": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+                        "display-lg-mobile": ["40px", { lineHeight: "48px", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(115, 92, 0, 0.08);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #735c00, #b52045);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Subtle bloom effect for images */
+        .image-bloom {
+            position: relative;
+        }
+        .image-bloom::after {
+            content: '';
+            position: absolute;
+            inset: -10%;
+            background: inherit;
+            filter: blur(30px);
+            opacity: 0.3;
+            z-index: -1;
+            transition: opacity 0.5s ease;
+        }
+        .group:hover .image-bloom::after {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-md dark:bg-black/10 bg-white/5 backdrop-blur-xl shadow-sm dark:shadow-none transition-all duration-300" id="main-nav">
+<div class="flex items-center justify-between px-margin-desktop py-4 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group" href="index.html">
+<img src="logo.jpg">
+<span class="font-display-lg text-headline-md text-primary dark:text-primary-fixed uppercase tracking-widest hidden lg:block text-gradient">Creative Splash</span>
+</a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity font-body-md text-body-md" href="weddings.html">Weddings</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity font-body-md text-body-md" href="balloons.html">Balloon Decor</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity font-body-md text-body-md" href="index.html#services">Birthdays</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity font-body-md text-body-md" href="index.html#about">About Us</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity font-body-md text-body-md" href="corporate_home.html">Corporate</a>
+</div>
+<!-- Trailing Action -->
+<a class="hidden md:inline-flex items-center justify-center bg-primary-container text-on-primary-container px-6 py-3 rounded-full font-label-md hover:bg-inverse-primary transition-colors shadow-sm hover:shadow-md hover:scale-95 duration-150" href="#inquire">
+                Inquire Now
+            </a>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Toggle Menu" class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-margin-mobile md:px-margin-desktop overflow-hidden">
+<!-- Decorative Background Elements -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-20 bg-[radial-gradient(circle_at_top_right,_#ffd8e7_0%,_transparent_40%),_radial-gradient(circle_at_bottom_left,_#ffe088_0%,_transparent_40%)]"></div>
+<div class="max-w-container-max w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter relative z-10 items-center">
+<!-- Hero Content -->
+<div class="lg:col-span-5 flex flex-col gap-8 text-center lg:text-left pt-12 lg:pt-0">
+<div class="space-y-4">
+<span class="inline-block text-secondary font-label-sm uppercase tracking-widest px-4 py-2 rounded-full border border-secondary/20 bg-secondary/5 glass-panel">
+                        Chennai's Premier Planners
+                    </span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+                        Bespoke Events <br>
+<span class="text-gradient italic">Curated by</span> <br>
+                        Sarrah &amp; Nishrin
+                    </h1>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0">
+                    Elevating life’s most precious moments through sophisticated design, meticulous planning, and unparalleled creativity. Experience the art of celebration.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<a class="inline-flex items-center justify-center bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-label-md hover:bg-inverse-primary transition-all duration-300 ambient-shadow hover:-translate-y-1" href="#inquire">
+                        Start Planning
+                    </a>
+<a class="inline-flex items-center justify-center bg-surface text-primary border border-outline-variant px-8 py-4 rounded-full font-label-md hover:bg-surface-variant transition-all duration-300 group" href="#services">
+                        Explore Portfolio
+                        <span class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Hero Imagery (Asymmetric Bento) -->
+<div class="lg:col-span-7 h-full min-h-[500px] relative mt-12 lg:mt-0">
+<div class="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-4 md:gap-6 p-4">
+<!-- Image 1 -->
+<div class="row-span-2 col-span-1 rounded-2xl overflow-hidden shadow-lg group relative glass-panel p-2 transform -translate-y-4 md:-translate-y-8">
+<div class="w-full h-full rounded-xl overflow-hidden relative">
+<img alt="Luxury Wedding Setup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="logo.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</div>
+<!-- Image 2 -->
+<div class="row-span-1 col-span-1 rounded-2xl overflow-hidden shadow-lg group relative glass-panel p-2 transform translate-y-4 md:translate-y-8">
+<div class="w-full h-full rounded-xl overflow-hidden relative">
+<img alt="Premium Balloon Decor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="logo.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</div>
+<!-- Aesthetic Card -->
+<div class="row-span-1 col-span-1 rounded-2xl p-6 glass-panel flex flex-col justify-center items-center text-center transform translate-y-4 md:translate-y-8 ambient-shadow bg-surface-container-low/80">
+<span class="material-symbols-outlined text-4xl text-primary mb-3">auto_awesome</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Artistry in Every Detail</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Tailored aesthetic experiences.</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Services Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative" id="services">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 max-w-2xl mx-auto space-y-4">
+<span class="text-tertiary font-label-md tracking-widest uppercase">Our Expertise</span>
+<h2 class="font-headline-md md:font-display-lg text-headline-md md:text-display-lg text-on-surface">Curated Experiences</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">From intimate gatherings to grand galas, we transform your vision into an unforgettable reality.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="group cursor-pointer rounded-2xl bg-surface border border-outline-variant/30 overflow-hidden ambient-shadow hover:-translate-y-2 transition-all duration-500">
+<div class="aspect-[4/5] relative overflow-hidden p-3">
+<div class="w-full h-full rounded-xl bg-surface-variant relative overflow-hidden">
+<!-- Using background image styling as requested for variety -->
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A close-up of a meticulously arranged luxury wedding dinner table. Crystal glassware, gold-rimmed plates, and a lavish centerpiece of white roses and lush greenery. The lighting is warm and romantic, creating a high-end, sophisticated light-mode aesthetic. Minimalist yet rich in texture." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBvmAnx7lNelUZFgAD0odbLfC2QJ0eozFSzqUtgihFgw0T5F8j3NoGcBmOB-5roetDqdk-XfpgsBmlFUp8Hc1CbaqWKoe9HYlWBJHOkQNOME0M9mdlFCBkhJ2aux4Bv9MkH6puaJOUNwgL1k5Gt7grrisFGQq95zN-j1MSR94Zit6cDVFp3vz0thFiLulQOKdu76FzlMp1WVJXU4SvOhzSBAnrGRnpdio3Gxy_XFxNOCAyZGlXzDHEMsaYlDRMsljRqzaw13Y1-rP8U')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="font-headline-sm text-headline-sm text-white mb-2">Weddings</h3>
+<p class="font-body-md text-body-md text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Timeless elegance and flawless execution for your special day.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer rounded-2xl bg-surface border border-outline-variant/30 overflow-hidden ambient-shadow hover:-translate-y-2 transition-all duration-500">
+<div class="aspect-[4/5] relative overflow-hidden p-3">
+<div class="w-full h-full rounded-xl bg-surface-variant relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="An expansive, modern balloon arch installation in an airy, sunlit room. Soft petal pink, warm white, and sky blue balloons of varying sizes cascade elegantly down a white wall. The setting is clean, bright, and festive, fitting a luxury editorial aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRhUp78BsEgZCCiBdIMtMd8aE1ZGXzetFfxvkGIE-i5NrPeqh7SHT7DeFyWah0agat5oJXFxBJjm_8azv0kvt97IrUHDTqPTbbzcwIr5eJKhGYnisCFasAcnWXj7Hd2tuFh4RK4NBNN5shzVK6oy0FsqQ7phpnOFzd2dmi8XaJledqYmXHAa-sP3q_g1iqLyiRM23nPj2X78oOI5Cplh5WliWrr0qJ97RiuyTCJaNjOwUAUT3bNZxQaK3IZjpJ1exbcIFPiZNNZnYN')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="font-headline-sm text-headline-sm text-white mb-2">Balloon Decor</h3>
+<p class="font-body-md text-body-md text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Chennai's most sought-after organic balloon artistry.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer rounded-2xl bg-surface border border-outline-variant/30 overflow-hidden ambient-shadow hover:-translate-y-2 transition-all duration-500">
+<div class="aspect-[4/5] relative overflow-hidden p-3">
+<div class="w-full h-full rounded-xl bg-surface-variant relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A lavish birthday party dessert table set in a modern, light-filled garden pavilion. Golden tiered cake stands hold delicate pastries. The backdrop features subtle, frosted glassmorphism elements and soft berry-tinted floral arrangements. The mood is celebratory and premium." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJSkigxR2EMzH_zPhqmaoiVeDxGH5KSrzdo_R-qYC0zXahsRrPkqWMfGt5O-gG3DKe2xZsRdDNj1TVOjdMHV_0q3qXZv_tCYkHMQuTS6hLXvEwQMSevCCvkLCIXW46ihxmm1TYka_o8M9ME7T4CoNjlrqEyS3YWPgbklkxbujqPgoh3dT6WZWJ0sYy_bWUkGE6m_rsrY-p-8yFV4TZt4dWRuuMpGEuCy5pLTT4H8YQ81ekiEUTZXtyY6oJacgawLtW5iu_M1782XyD')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="font-headline-sm text-headline-sm text-white mb-2">Birthdays</h3>
+<p class="font-body-md text-body-md text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Thematic perfection for milestone celebrations.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group cursor-pointer rounded-2xl bg-surface border border-outline-variant/30 overflow-hidden ambient-shadow hover:-translate-y-2 transition-all duration-500">
+<div class="aspect-[4/5] relative overflow-hidden p-3">
+<div class="w-full h-full rounded-xl bg-surface-variant relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A charming and sophisticated baby shower setup. A beautifully styled seating area with plush cream cushions, delicate pastel floral arrangements, and subtle gold accents. The lighting is airy and soft, creating a serene, inviting, and highly curated light-mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAtFX1uGIDD7I2uLe2LJAZxlNtS6GNqJhYOGr7Zx6nmUY8qz5f71d9FL6OZCnuyO-v2_wCShJzwGY83QwHcjDSu6Wh3c4A3lI5P1kkITtlIl0QqE_nWsGgHdPLKXA0ax_SogRk-q5ItK69PgUb6ifYvVg7RnZbF8y5dhmaYN8LDfg4IFngzOu7cdHaDT7IwNmSvkgDwY7rrqbw6ARcbwbIf4PSLoptcNCuI3KQMZvUAORyB-tzbhccIn57Cm2lAEfnIuTjPmYSKDGRk')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<h3 class="font-headline-sm text-headline-sm text-white mb-2">Baby Showers</h3>
+<p class="font-body-md text-body-md text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Elegant and joyful gatherings to welcome new life.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section (Asymmetric Layout) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface overflow-hidden relative" id="about">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative order-2 lg:order-1">
+<div class="relative z-10 p-4 glass-panel rounded-[2rem] ambient-shadow max-w-md mx-auto lg:ml-auto">
+<img class="w-full rounded-2xl object-cover aspect-[4/5]" data-alt="A candid, beautifully lit portrait of two female event planners reviewing elegant fabric swatches and floral samples at a clean, white marble table. The setting is a chic, modern design studio with abundant natural light. The aesthetic communicates professionalism, creativity, and high-fashion editorial style." src="logo.jpg">
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-secondary-fixed-dim rounded-full blur-3xl opacity-50 z-0"></div>
+</div>
+<div class="space-y-8 order-1 lg:order-2">
+<span class="text-tertiary font-label-md tracking-widest uppercase flex items-center gap-2">
+<span class="w-8 h-[1px] bg-tertiary"></span>
+                    The Visionaries
+                </span>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Crafting Unique Experiences</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    At Creative Splash, we believe that every event is a living story waiting to be told. Founded by Sarrah &amp; Nishrin, our approach marries the principles of high-fashion minimalism with the joyous energy of celebration. 
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    We specialize in captivating decor—from frosted glassmorphic styling to lush, breathtaking balloon arrangements that feel light as air. Our meticulous attention to detail ensures that your event is not just seen, but deeply felt.
+                </p>
+<div class="grid grid-cols-2 gap-6 pt-4">
+<div>
+<p class="font-headline-md text-headline-md text-primary mb-1">500+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Events Curated</p>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-primary mb-1">100%</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Bespoke Design</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials / Praise (Glassmorphic Cards) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container relative">
+<div class="absolute inset-0 z-0 opacity-30 bg-[radial-gradient(circle_at_center,_#ffd8e7_0%,_transparent_70%)]"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-md md:font-display-lg text-headline-md md:text-display-lg text-on-surface">Client Praise</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="glass-panel p-8 rounded-2xl ambient-shadow flex flex-col gap-6 transform hover:-translate-y-2 transition-transform duration-300">
+<div class="text-primary flex gap-1">
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic flex-grow">"Sarrah and Nishrin completely transformed our venue. The balloon installation was unlike anything I had ever seen—truly an elegant piece of art rather than just party decor."</p>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Aishwarya R.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Wedding Reception</p>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-panel p-8 rounded-2xl ambient-shadow flex flex-col gap-6 transform md:-translate-y-6 hover:-translate-y-8 transition-transform duration-300 bg-white/90">
+<div class="text-primary flex gap-1">
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic flex-grow">"Their attention to detail is unmatched. The floral arrangements for my daughter's first birthday felt like stepping into a fairy tale. Professionalism at its peak."</p>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Meera V.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">First Birthday</p>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-panel p-8 rounded-2xl ambient-shadow flex flex-col gap-6 transform hover:-translate-y-2 transition-transform duration-300">
+<div class="text-primary flex gap-1">
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+<span class="material-symbols-outlined fill-icon">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic flex-grow">"Creative Splash handled our corporate gala effortlessly. The aesthetic was modern, premium, and perfectly aligned with our brand. Highly recommend their bespoke services."</p>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Karthik S.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Corporate Gala</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface-bright relative overflow-hidden" id="inquire">
+<div class="max-w-4xl mx-auto text-center relative z-10 glass-panel p-12 md:p-20 rounded-[2.5rem] ambient-shadow border border-primary/10">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 text-gradient">Let's Create Magic</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                Ready to elevate your next celebration? Connect with us to begin curating a bespoke experience tailored exclusively to your vision.
+            </p>
+<form class="max-w-md mx-auto space-y-4 text-left">
+<div>
+<input class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Your Name" type="text">
+</div>
+<div>
+<input class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Email Address" type="email">
+</div>
+<div>
+<select class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm text-on-surface-variant appearance-none">
+<option value="">Select Event Type</option>
+<option value="wedding">Wedding</option>
+<option value="balloon">Balloon Decor</option>
+<option value="birthday">Birthday</option>
+<option value="other">Other</option>
+</select>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-label-md hover:bg-inverse-primary transition-all duration-300 ambient-shadow mt-4" type="button">
+                    Inquire for Your Next Celebration
+                </button>
+</form>
+</div>
+<!-- Decorative subtle shapes -->
+<div class="absolute top-10 left-10 w-32 h-32 rounded-full border border-secondary/20 pointer-events-none"></div>
+<div class="absolute bottom-10 right-10 w-64 h-64 rounded-full border border-primary/20 pointer-events-none"></div>
+</section>
+<!-- Footer -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface relative overflow-hidden">
+  <div class="max-w-container-max mx-auto">
+    <div class="text-center mb-16 space-y-4">
+      <span class="text-tertiary font-label-md tracking-widest uppercase">Instagram</span>
+      <h2 class="font-headline-md md:font-display-lg text-headline-md md:text-display-lg text-on-surface">Follow Our Journey</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant">Behind the scenes of Chennai's most enchanting celebrations.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+      <div class="aspect-square rounded-xl overflow-hidden ambient-shadow group">
+        <img src="https://lh3.googleusercontent.com/aida/AP1WRLv_gMTM_M64JxHuV7ikvmPZYcH77Ra5jpPKl8Z0yWXBnp3pLsCe-T_YF_qCqxgxQFqmD4BjPmQMmzPFYoz3sUAeDiSs34CBI1HZHNuL05ypDlm5kNb3tooPHIrE_lZ-ipVIJhib_r_lNBvlqlSo6HznGJxrswZa2M3HiYhvF0CvQJtjrbmchquT2uEs7KWfi9MLNWENf1wRUiD2Y8yeSR0rO25_Vc6m32jJPev1rlAFp07zQx2HPEGJXKjV" alt="Wedding Reception" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden ambient-shadow group">
+        <img src="https://lh3.googleusercontent.com/aida/AP1WRLtvsoBhtPlQR68BhLNWVaC7sxMpJ9GCykezapfhmolZwYe-WI3KXEK--OeAFtea_ocvz5udCNOpXr7eSK5smvW08V68-L8FG09mY4paKhTY-5kugR3T2f6ygSXYiQ9xGa7qp8wGQkX-GrtPtbMPdn61qXg9fUdfJYACRKa0ZFioVNR5-ZmMnpDY-nCTkks1o_hyxWKwrBl6CBcDWhEpEDPm3D5Q1WDn1vp2xD93qtGL8GyOXjpVobzvDVG1" alt="Balloon Decor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden ambient-shadow group">
+        <img src="logo.jpg" alt="Event Detail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden ambient-shadow group">
+        <img src="logo.jpg" alt="Balloon Art" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden ambient-shadow group">
+        <img src="logo.jpg" alt="Table Setting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      </div>
+      <div class="aspect-square rounded-xl overflow-hidden ambient-shadow group">
+        <img src="logo.jpg" alt="Birthday Decor" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="https://www.instagram.com/creative_splash_event_planners" target="_blank" class="inline-flex items-center justify-center bg-surface text-primary border border-outline-variant px-8 py-4 rounded-full font-label-md hover:bg-surface-variant transition-all duration-300 group">
+        Follow @creative_splash_event_planners
+        <span class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section><footer class="bg-surface-container-low dark:bg-inverse-surface w-full rounded-t-xl shadow-[0_-10px_40px_rgba(115,92,0,0.08)] mt-auto transition-colors duration-300 ease-in-out">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Brand -->
+<div class="flex flex-col gap-4">
+<img alt="Creative Splash Logo" class="h-12 w-auto object-contain" src="logo.jpg">
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Bespoke event planning and high-end decor curations in Chennai.</p>
+</div>
+<!-- Links -->
+<div class="flex flex-col gap-4 md:items-center">
+<div class="flex flex-col gap-3">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-tertiary transition-colors" href="https://www.instagram.com/creative_splash_event_planners" target="_blank">@creative_splash_event_planners</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-tertiary transition-colors" href="index.html">Pinterest</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-tertiary transition-colors" href="index.html">Contact</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-tertiary transition-colors" href="index.html">Privacy Policy</a>
+</div>
+</div>
+<!-- Contact Info -->
+<div class="flex flex-col gap-4 md:items-end text-left md:text-right">
+<p class="font-body-md text-body-md text-on-surface-variant">Chennai, Tamil Nadu, India</p>
+<p class="font-body-md text-body-md text-on-surface-variant">creativesplashevpl@gmail.com</p><p class="font-body-md text-body-md text-on-surface-variant">09962664810</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 opacity-70">© 2024 Creative Splash. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for top nav
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
+    </script>
+
+
+</body></html>

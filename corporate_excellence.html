@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corporate Events | Creative Splash</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#5f5e5e",
+                    "on-primary-fixed": "#261900",
+                    "primary-fixed-dim": "#e9c176",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "outline": "#7f7667",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-tertiary-container": "#393b3c",
+                    "tertiary-container": "#a4a5a5",
+                    "surface-tint": "#775a19",
+                    "on-secondary-container": "#636262",
+                    "surface-dim": "#dadada",
+                    "on-surface-variant": "#4e4639",
+                    "on-surface": "#1a1c1c",
+                    "surface": "#f9f9f9",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#c5a059",
+                    "on-primary": "#ffffff",
+                    "background": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#d1c5b4",
+                    "inverse-on-surface": "#f0f1f1",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-secondary-fixed-variant": "#474746",
+                    "surface-variant": "#e2e2e2",
+                    "secondary-container": "#e2dfde",
+                    "inverse-surface": "#2f3131",
+                    "secondary-fixed": "#e5e2e1",
+                    "on-primary-container": "#4e3700",
+                    "tertiary": "#5d5f5f",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eeeeee",
+                    "surface-container-low": "#f3f3f4",
+                    "tertiary-fixed": "#e2e2e2",
+                    "inverse-primary": "#e9c176",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-bright": "#f9f9f9",
+                    "on-primary-fixed-variant": "#5d4201",
+                    "primary": "#775a19",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e2e2e2",
+                    "primary-fixed": "#ffdea5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "section-gap": "120px",
+                    "margin-mobile": "24px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "display-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-lg": [
+                            "Montserrat"
+                    ],
+                    "body-md": [
+                            "Montserrat"
+                    ],
+                    "label-sm": [
+                            "Montserrat"
+                    ],
+                    "body-lg": [
+                            "Montserrat"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "letterSpacing": "0.01em",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .marquee-container {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 4rem;
+        }
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 4rem;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-100% - 4rem)); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md fixed top-0 w-full z-50 transition-colors duration-300 border-b border-outline/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md tracking-widest text-primary uppercase">
+                CREATIVE SPLASH
+            </div>
+<ul class="hidden md:flex space-x-8 items-center">
+<li><a class="font-label-lg text-label-lg text-secondary hover:text-primary transition-colors hover:opacity-80 duration-300 uppercase" href="weddings.html">Weddings</a></li>
+<li><a class="font-label-lg text-label-lg text-primary border-b border-primary pb-1 hover:opacity-80 duration-300 uppercase" href="corporate_home.html">Corporate</a></li>
+<li><a class="font-label-lg text-label-lg text-secondary hover:text-primary transition-colors hover:opacity-80 duration-300 uppercase" href="index.html">Social</a></li>
+<li><a class="font-label-lg text-label-lg text-secondary hover:text-primary transition-colors hover:opacity-80 duration-300 uppercase" href="index.html">Reviews</a></li>
+</ul>
+<button class="hidden md:inline-block bg-on-surface text-surface font-label-lg text-label-lg uppercase py-3 px-6 hover:bg-primary transition-colors duration-300">
+                Consultation
+            </button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="pt-40 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-gutter relative">
+<div class="w-full lg:w-5/12 z-10 pr-0 lg:pr-12">
+<div class="inline-block border border-outline/30 px-3 py-1 mb-8">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Prestige Corporate Division</span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-8 uppercase leading-tight">
+                Corporate<br/>Excellence<br/>on a Grand Scale
+            </h1>
+<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-md">
+                Masterminding high-stakes environments where global leaders convene, innovations launch, and corporate legacies are defined through impeccable execution.
+            </p>
+<button class="bg-on-surface text-surface font-label-lg text-label-lg uppercase py-4 px-10 tracking-[0.2em] hover:bg-surface-tint transition-all duration-300 border border-transparent hover:border-primary">
+                Explore Strategy
+            </button>
+</div>
+<div class="w-full lg:w-7/12 h-[500px] lg:h-[700px] mt-12 lg:mt-0 relative">
+<img class="w-full h-full object-cover rounded-DEFAULT filter contrast-105" src="logo.jpg"/>
+<div class="absolute inset-0 border border-outline/10 pointer-events-none rounded-DEFAULT"></div>
+</div>
+</header>
+<!-- Logo Marquee -->
+<section class="py-16 border-y border-outline/10 bg-surface-container-lowest overflow-hidden">
+<div class="text-center mb-8">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Trusted by Industry Leaders</span>
+</div>
+<div class="marquee-container opacity-60 grayscale">
+<div class="marquee-content items-center">
+<span class="font-headline-md text-headline-md text-secondary">AERIS GLOBAL</span>
+<span class="font-headline-md text-headline-md text-secondary">VANGUARD TECH</span>
+<span class="font-headline-md text-headline-md text-secondary">NEXUS HOLDINGS</span>
+<span class="font-headline-md text-headline-md text-secondary">LUX VENTURES</span>
+<span class="font-headline-md text-headline-md text-secondary">OMNI CORP</span>
+</div>
+<div aria-hidden="true" class="marquee-content items-center">
+<span class="font-headline-md text-headline-md text-secondary">AERIS GLOBAL</span>
+<span class="font-headline-md text-headline-md text-secondary">VANGUARD TECH</span>
+<span class="font-headline-md text-headline-md text-secondary">NEXUS HOLDINGS</span>
+<span class="font-headline-md text-headline-md text-secondary">LUX VENTURES</span>
+<span class="font-headline-md text-headline-md text-secondary">OMNI CORP</span>
+</div>
+</div>
+</section>
+<!-- Service Tiers -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Architectures of Influence</h2>
+<p class="font-body-md text-body-md text-secondary">Curated service tiers designed to align with your organization's specific strategic objectives and scale.</p>
+</div>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-primary hover:text-on-surface transition-colors border-b border-primary pb-1" href="index.html">View Full Portfolio</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Tier 1 -->
+<div class="group border border-outline/20 bg-surface p-8 transition-colors hover:bg-surface-container-low flex flex-col h-full">
+<div class="mb-8 overflow-hidden h-48 rounded-DEFAULT relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated corporate gala setup in a grand ballroom. The room features high ceilings, dramatic architectural lighting in deep blues and golds. Minimalist tablescapes with crystal glassware and modern centerpieces. High-contrast, editorial style photography." src="logo.jpg"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Annual Galas</h3>
+<p class="font-body-md text-body-md text-secondary mb-8 flex-grow">Immersive, high-touch environments designed for recognition, fundraising, and stakeholder engagement. We prioritize fluid guest journeys and striking visual anchors.</p>
+<div class="pt-6 border-t border-outline/10 flex justify-between items-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Tier I</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Tier 2 -->
+<div class="group border border-outline/20 bg-surface p-8 transition-colors hover:bg-surface-container-low flex flex-col h-full">
+<div class="mb-8 overflow-hidden h-48 rounded-DEFAULT relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sleek, futuristic product launch stage. A large, ultra-wide LED screen displays abstract generative art in cool tones. The stage is minimalist, glossy white, with professional lighting rigs above. A modern podium stands center. Sharp, high-resolution prestige corporate aesthetic." src="logo.jpg"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Product Launches</h3>
+<p class="font-body-md text-body-md text-secondary mb-8 flex-grow">Avant-garde technical productions that command attention. We integrate cutting-edge spatial design with precision timing to unveil your innovations flawlessly.</p>
+<div class="pt-6 border-t border-outline/10 flex justify-between items-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Tier II</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="group border border-outline/20 bg-surface p-8 transition-colors hover:bg-surface-container-low flex flex-col h-full">
+<div class="mb-8 overflow-hidden h-48 rounded-DEFAULT relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An exclusive executive summit setup in a minimalist, sunlit boardroom overlooking a city skyline. A long bespoke wooden table, plush ergonomic chairs, and discreet technology integration. The atmosphere is calm, authoritative, and deeply private. High-key lighting." src="logo.jpg"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">High-Level Summits</h3>
+<p class="font-body-md text-body-md text-secondary mb-8 flex-grow">Discreet, tightly orchestrated gatherings for executive leadership. Focus is placed on secure environments, seamless logistics, and premium concierge-level service.</p>
+<div class="pt-6 border-t border-outline/10 flex justify-between items-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Tier III</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Corporate Strategy / Process -->
+<section class="py-section-gap bg-surface-container px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4 lg:pr-12">
+<div class="sticky top-32">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-4 block">Methodology</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">The Corporate Strategy</h2>
+<p class="font-body-md text-body-md text-secondary mb-8">Our bespoke planning process is treated with the same rigor as a corporate merger. We mitigate risk, ensure brand alignment, and guarantee absolute discretion.</p>
+</div>
+</div>
+<div class="lg:col-span-8 flex flex-col gap-12 mt-12 lg:mt-0">
+<div class="flex flex-col md:flex-row gap-8 items-start border-b border-outline/10 pb-12">
+<div class="font-display-lg text-display-lg text-outline/30 font-bold leading-none w-24 flex-shrink-0">01</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Strategic Alignment</h4>
+<p class="font-body-md text-body-md text-secondary">Initial discovery phases strictly focus on understanding the core ROI of the event. We analyze audience demographics, corporate messaging, and desired post-event actions.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start border-b border-outline/10 pb-12">
+<div class="font-display-lg text-display-lg text-outline/30 font-bold leading-none w-24 flex-shrink-0">02</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Spatial Architecture</h4>
+<p class="font-body-md text-body-md text-secondary">Moving beyond standard floorplans, we engineer spatial dynamics that dictate flow, encourage networking, or enforce focus, utilizing minimalistic design principles to highlight key content.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="font-display-lg text-display-lg text-outline/30 font-bold leading-none w-24 flex-shrink-0">03</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Precision Execution</h4>
+<p class="font-body-md text-body-md text-secondary">On-site, our team operates with military precision. A dedicated command center oversees technical cues, VIP logistics, and security, ensuring the host committee remains entirely unburdened.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Google Reviews Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-20">
+<span class="inline-flex items-center justify-center gap-2 mb-4">
+<svg class="w-6 h-6" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Google Reviews</span>
+</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Trusted by Industry Leaders</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Review 1 -->
+<div class="bg-surface border border-outline/10 p-10 flex flex-col relative overflow-hidden">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-8 leading-relaxed italic">"Creative Splash redefined our expectations for our global tech summit. Their architectural approach to spatial design and flawless execution allowed our executive team to focus entirely on content. Absolute professionals."</p>
+<div class="mt-auto flex items-center gap-4 border-t border-outline/10 pt-6">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center font-headline-md text-headline-md text-primary">J</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Jonathan Hayes</h4>
+<p class="font-label-sm text-label-sm text-secondary">CMO, Vanguard Tech</p>
+</div>
+<div class="ml-auto flex items-center gap-1 text-primary-fixed-dim">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="font-label-sm text-label-sm uppercase">Verified</span>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface border border-outline/10 p-10 flex flex-col relative overflow-hidden">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-surface-tint" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-8 leading-relaxed italic">"The level of discretion and structural organization provided for our annual investor gala was unparalleled. The minimalist aesthetic perfectly aligned with our brand, and the execution was invisible yet perfect."</p>
+<div class="mt-auto flex items-center gap-4 border-t border-outline/10 pt-6">
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center font-headline-md text-headline-md text-primary">S</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Sarah Lin</h4>
+<p class="font-label-sm text-label-sm text-secondary">VP Operations, Lux Ventures</p>
+</div>
+<div class="ml-auto flex items-center gap-1 text-primary-fixed-dim">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="font-label-sm text-label-sm uppercase">Verified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-on-surface dark:bg-inverse-surface w-full pt-section-gap pb-8 border-t border-outline/20">
+<div class="grid grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<div class="font-headline-md text-headline-md text-surface dark:text-surface-bright uppercase tracking-widest mb-6">
+                    CREATIVE SPLASH
+                </div>
+<p class="font-body-md text-body-md text-surface-variant/70 max-w-sm mb-8">
+                    Architects of high-scale prestige events. Discretion, organization, and avant-garde elegance.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-2 md:col-start-7">
+<h4 class="font-label-sm text-label-sm text-surface dark:text-surface-bright uppercase tracking-widest mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-surface-variant/70 hover:text-primary-fixed-dim transition-all duration-200" href="index.html">About</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant/70 hover:text-primary-fixed-dim transition-all duration-200" href="index.html">Portfolio</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant/70 hover:text-primary-fixed-dim transition-all duration-200" href="index.html">Careers</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-4">
+<h4 class="font-label-sm text-label-sm text-surface dark:text-surface-bright uppercase tracking-widest mb-6">Legal &amp; Media</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-surface-variant/70 hover:text-primary-fixed-dim transition-all duration-200" href="index.html">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant/70 hover:text-primary-fixed-dim transition-all duration-200" href="index.html">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-surface-variant/70 hover:text-primary-fixed-dim transition-all duration-200" href="index.html">Press Kit</a></li>
+</ul>
+</div>
+<div class="col-span-12 pt-16 mt-16 border-t border-outline/10 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+<p class="font-body-md text-body-md text-surface-variant/50">
+                    © 2024 Creative Splash. All Rights Reserved. Chennai Luxury Event Planners.
+                </p>
+<button class="mt-8 md:mt-0 w-12 h-12 border border-outline/20 flex items-center justify-center text-surface-variant/70 hover:text-primary-fixed-dim hover:border-primary-fixed-dim transition-all duration-300" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>
