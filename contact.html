@@ -205,9 +205,9 @@
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html#about">About Us</a>
 <a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity font-body-md text-body-md" href="corporate_home.html">Corporate</a>
 </div>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:opacity-80 transition-opacity active:scale-95 duration-150 hidden md:block">
+<a href="#inquire" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md hover:opacity-80 transition-opacity active:scale-95 duration-150 hidden md:block">
                 Inquire Now
-            </button>
+            </a>
 <button class="md:hidden text-primary p-2">
 <span class="material-symbols-outlined">menu</span>
 </button>
@@ -274,7 +274,7 @@
 </div>
 </section>
 <!-- Contact Section -->
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+<section id="inquire" class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
 <!-- Contact Info & Map -->
 <div class="space-y-8">
 <div>
@@ -302,42 +302,129 @@
 </div>
 <div class="flex items-center gap-4 text-on-surface-variant"><div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-primary"><span class="material-symbols-outlined">call</span></div><div><p class="font-label-md text-label-md text-primary">Phone</p><p class="">09962664810</p></div></div></div>
 <div class="h-64 rounded-xl overflow-hidden glass-panel">
-<img class="h-12 w-auto object-contain" style="height:48px;width:auto;object-fit:contain;display:block;" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-location="Chennai" src="logo.jpg">
+<img class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-location="Chennai" src="logo.jpg">
 </div>
 </div>
 <!-- Contact Form -->
 <div class="glass-panel p-8 md:p-12 rounded-2xl">
-<form class="space-y-6">
+<form id="inquire-form" class="space-y-6" novalidate>
 <div class="space-y-2">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="name">Full Name</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" id="name" placeholder="Jane Doe" type="text">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="inq-name">Full Name</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" id="inq-name" required placeholder="Jane Doe" type="text" autocomplete="name">
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="date">Event Date</label>
-<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all text-on-surface-variant" id="date" type="date">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="inq-email">Email Address</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" id="inq-email" required placeholder="jane@example.com" type="email" autocomplete="email">
 </div>
 <div class="space-y-2">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="type">Event Type</label>
-<select class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all text-on-surface-variant" id="type">
-<option>Birthday Party</option>
-<option>Baby Shower</option>
-<option>Naming Ceremony</option>
-<option>Corporate Event</option>
-<option>Other</option>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="inq-mobile">Mobile Number</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" id="inq-mobile" required placeholder="e.g. +91 98765 43210" type="tel" autocomplete="tel">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="inq-date">Event Date</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all text-on-surface-variant" id="inq-date" type="date">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="inq-event">Event Type</label>
+<select class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all text-on-surface-variant" id="inq-event" required>
+<option value="">Select Event Type</option>
+<option value="Birthday Party">Birthday Party</option>
+<option value="Baby Shower">Baby Shower</option>
+<option value="Naming Ceremony">Naming Ceremony</option>
+<option value="Corporate Event">Corporate Event</option>
+<option value="Other">Other</option>
 </select>
 </div>
 </div>
 <div class="space-y-2">
-<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="message">Tell us about your vision</label>
-<textarea class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" id="message" placeholder="Describe the theme, estimated guest count, and any specific requirements..." rows="4"></textarea>
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="inq-venue">Event Venue / Location</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" id="inq-venue" required placeholder="Event Venue in Chennai" type="text">
 </div>
-<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-full font-label-md text-label-md uppercase tracking-wider hover:opacity-90 transition-opacity active:scale-95 duration-150" type="button">
-                        Submit Inquiry
-                    </button>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase" for="inq-message">Tell us about your vision</label>
+<textarea class="w-full bg-surface-bright border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-secondary-container focus:border-secondary-container transition-all" id="inq-message" placeholder="Describe the theme, estimated guest count, and any specific requirements..." rows="4"></textarea>
+</div>
+
+<!-- Success / error message area -->
+<div id="inq-feedback" style="display:none;" class="rounded-lg px-6 py-4 text-sm font-body-md text-center"></div>
+
+<button id="inq-submit" type="button" onclick="submitInquiry()" class="w-full bg-primary-container text-on-primary-container py-4 rounded-full font-label-md text-label-md uppercase tracking-wider hover:opacity-90 transition-opacity active:scale-95 duration-150">
+<span id="inq-btn-text">Submit Inquiry</span>
+</button>
 </form>
 </div>
 </section>
+
+<script>
+function submitInquiry() {
+  var name      = document.getElementById('inq-name').value.trim();
+  var email     = document.getElementById('inq-email').value.trim();
+  var mobile    = document.getElementById('inq-mobile').value.trim();
+  var date      = document.getElementById('inq-date').value;
+  var eventType = document.getElementById('inq-event').value;
+  var venue     = document.getElementById('inq-venue').value.trim();
+  var message   = document.getElementById('inq-message').value.trim();
+  var feedback  = document.getElementById('inq-feedback');
+
+  if (!name || !email || !mobile || !eventType || !venue) {
+    feedback.style.display = 'block';
+    feedback.style.background = '#ffdad6';
+    feedback.style.color = '#93000a';
+    feedback.textContent = 'Please fill in all required fields (Name, Email, Mobile, Event Type, Venue) before submitting.';
+    return;
+  }
+
+  // 1. Open WhatsApp with pre-filled message
+  var waMsg = encodeURIComponent(
+    '🌟 New Event Inquiry — Creative Splash\n\n'
+    + 'Name: ' + name + '\n'
+    + 'Email: ' + email + '\n'
+    + 'Mobile: ' + mobile + '\n'
+    + 'Event Date: ' + (date || 'Not specified') + '\n'
+    + 'Event Type: ' + eventType + '\n'
+    + 'Venue: ' + venue + '\n'
+    + 'Message/Vision: ' + (message || 'None') + '\n\n'
+    + 'Sent from the website contact page inquiry form.'
+  );
+  window.open('https://wa.me/918939789880?text=' + waMsg, '_blank');
+
+  // 2. Open email client with pre-filled inquiry
+  var mailSubject = encodeURIComponent('New Event Inquiry — ' + eventType + ' | Creative Splash');
+  var mailBody = encodeURIComponent(
+    'Hello Creative Splash,\n\n'
+    + 'I would like to inquire about your event planning services.\n\n'
+    + 'Name: ' + name + '\n'
+    + 'Email: ' + email + '\n'
+    + 'Mobile: ' + mobile + '\n'
+    + 'Event Date: ' + (date || 'Not specified') + '\n'
+    + 'Event Type: ' + eventType + '\n'
+    + 'Venue: ' + venue + '\n'
+    + 'Message/Vision: ' + (message || 'None') + '\n\n'
+    + 'Please get in touch at your earliest convenience.\n\n'
+    + 'Thank you!'
+  );
+  setTimeout(function() {
+    window.location.href = 'mailto:creativesplashevpl@gmail.com?subject=' + mailSubject + '&body=' + mailBody;
+  }, 500);
+
+  // 3. Show success message
+  feedback.style.display = 'block';
+  feedback.style.background = '#d4f7dc';
+  feedback.style.color = '#1a5c2a';
+  feedback.innerHTML = '✅ Opening WhatsApp & email — your inquiry is being sent!';
+  document.getElementById('inq-btn-text').textContent = 'Inquiry Sent!';
+
+  // Reset after 5 seconds
+  setTimeout(function() {
+    document.getElementById('inq-btn-text').textContent = 'Submit Inquiry';
+    document.getElementById('inquire-form').reset();
+    feedback.style.display = 'none';
+  }, 5000);
+}
+</script>
 </main>
 <!-- Footer -->
 

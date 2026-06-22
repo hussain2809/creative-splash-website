@@ -230,9 +230,9 @@
 </div>
 <!-- Actions -->
 <div class="flex items-center gap-4">
-<button class="hidden md:flex items-center justify-center gap-2 px-6 py-2 rounded-full border border-outline hover:bg-surface-container-high transition-colors text-on-surface font-label-lg text-label-lg">
+<a href="#inquire" class="hidden md:flex items-center justify-center gap-2 px-6 py-2 rounded-full border border-outline hover:bg-surface-container-high transition-colors text-on-surface font-label-lg text-label-lg">
                 Inquire Now
-            </button>
+            </a>
 <!-- Mobile Menu Button -->
 <button class="lg:hidden p-2 text-on-surface hover:bg-surface-container-high rounded-full transition-colors">
 <span class="material-symbols-outlined">menu</span>
@@ -614,26 +614,101 @@
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
             Ready to elevate your next grand event? Connect with us to begin curating a bespoke experience tailored exclusively to your vision.
         </p>
-<form class="max-w-md mx-auto space-y-4 text-left">
-<div>
-<input class="w-full bg-white border border-outline-variant/50 rounded-lg px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Your Name" type="text"/>
-</div>
-<div>
-<input class="w-full bg-white border border-outline-variant/50 rounded-lg px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Email Address" type="email"/>
-</div>
-<div>
-<select class="w-full bg-white border border-outline-variant/50 rounded-lg px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md transition-shadow shadow-sm text-on-surface-variant appearance-none">
-<option value="">Select Event Type</option>
-<option value="corporate">Corporate Gala</option>
-<option value="wedding">Grand Wedding</option>
-<option value="exclusive">Exclusive Celebration</option>
-<option value="other">Other</option>
-</select>
-</div>
-<button class="w-full bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-label-lg hover:bg-inverse-primary transition-all duration-300 ambient-shadow mt-4" type="button">
-                Inquire for Your Next Celebration
-            </button>
+<form id="inquire-form" class="max-w-md mx-auto space-y-4 text-left" novalidate>
+  <div>
+    <input id="inq-name" name="name" required class="w-full bg-white border border-outline-variant/50 rounded-lg px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Your Name" type="text" autocomplete="name"/>
+  </div>
+  <div>
+    <input id="inq-email" name="email" required class="w-full bg-white border border-outline-variant/50 rounded-lg px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Email Address" type="email" autocomplete="email"/>
+  </div>
+  <div>
+    <input id="inq-mobile" name="mobile" required class="w-full bg-white border border-outline-variant/50 rounded-lg px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Mobile Number" type="tel" autocomplete="tel"/>
+  </div>
+  <div style="position:relative;">
+    <select id="inq-event" name="event_type" required class="w-full bg-white border border-outline-variant/50 rounded-lg px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md transition-shadow shadow-sm text-on-surface-variant appearance-none">
+      <option value="">Select Event Type</option>
+      <option value="Corporate Annual Event">Corporate Annual Event</option>
+      <option value="Employee Engagement">Employee Engagement</option>
+      <option value="Exhibition Booth Setup">Exhibition Booth Setup</option>
+      <option value="Offsite or Retreat">Offsite or Retreat</option>
+      <option value="Festival Celebration">Festival Celebration</option>
+      <option value="Other Corporate Event">Other Corporate Event</option>
+    </select>
+    <span style="position:absolute;right:20px;top:50%;transform:translateY(-50%);pointer-events:none;" class="material-symbols-outlined text-base">expand_more</span>
+  </div>
+  <div>
+    <input id="inq-venue" name="venue" required class="w-full bg-white border border-outline-variant/50 rounded-lg px-6 py-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Event Venue / Location" type="text"/>
+  </div>
+
+  <!-- Success / error message area -->
+  <div id="inq-feedback" style="display:none;" class="rounded-lg px-6 py-4 text-sm font-body-md text-center"></div>
+
+  <button id="inq-submit" type="button" onclick="submitInquiry()" class="w-full bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-label-lg hover:bg-inverse-primary transition-all duration-300 ambient-shadow mt-4">
+    <span id="inq-btn-text">Inquire for Your Next Celebration</span>
+  </button>
 </form>
+
+<script>
+function submitInquiry() {
+  var name      = document.getElementById('inq-name').value.trim();
+  var email     = document.getElementById('inq-email').value.trim();
+  var mobile    = document.getElementById('inq-mobile').value.trim();
+  var eventType = document.getElementById('inq-event').value;
+  var venue     = document.getElementById('inq-venue').value.trim();
+  var feedback  = document.getElementById('inq-feedback');
+
+  if (!name || !email || !mobile || !eventType || !venue) {
+    feedback.style.display = 'block';
+    feedback.style.background = '#ffdad6';
+    feedback.style.color = '#93000a';
+    feedback.textContent = 'Please fill in all fields before submitting.';
+    return;
+  }
+
+  // 1. Open WhatsApp with pre-filled message
+  var waMsg = encodeURIComponent(
+    '🌟 New Corporate Event Inquiry — Creative Splash\n\n'
+    + 'Name: ' + name + '\n'
+    + 'Email: ' + email + '\n'
+    + 'Mobile: ' + mobile + '\n'
+    + 'Event Type: ' + eventType + '\n'
+    + 'Venue: ' + venue + '\n\n'
+    + 'Sent from the website corporate inquiry form.'
+  );
+  window.open('https://wa.me/918939789880?text=' + waMsg, '_blank');
+
+  // 2. Open email client with pre-filled inquiry
+  var mailSubject = encodeURIComponent('New Corporate Event Inquiry — ' + eventType + ' | Creative Splash');
+  var mailBody = encodeURIComponent(
+    'Hello Creative Splash,\n\n'
+    + 'I would like to inquire about your corporate event planning services.\n\n'
+    + 'Name: ' + name + '\n'
+    + 'Email: ' + email + '\n'
+    + 'Mobile: ' + mobile + '\n'
+    + 'Event Type: ' + eventType + '\n'
+    + 'Venue: ' + venue + '\n\n'
+    + 'Please get in touch at your earliest convenience.\n\n'
+    + 'Thank you!'
+  );
+  setTimeout(function() {
+    window.location.href = 'mailto:creativesplashevpl@gmail.com?subject=' + mailSubject + '&body=' + mailBody;
+  }, 500);
+
+  // 3. Show success message
+  feedback.style.display = 'block';
+  feedback.style.background = '#d4f7dc';
+  feedback.style.color = '#1a5c2a';
+  feedback.innerHTML = '✅ Opening WhatsApp & email — your inquiry is being sent!';
+  document.getElementById('inq-btn-text').textContent = 'Inquiry Sent!';
+
+  // Reset after 5 seconds
+  setTimeout(function() {
+    document.getElementById('inq-btn-text').textContent = 'Inquire for Your Next Celebration';
+    document.getElementById('inquire-form').reset();
+    feedback.style.display = 'none';
+  }, 5000);
+}
+</script>
 </div>
 <!-- Decorative subtle shapes -->
 <div class="absolute top-10 left-10 w-32 h-32 rounded-full border border-secondary/20 pointer-events-none"></div>
