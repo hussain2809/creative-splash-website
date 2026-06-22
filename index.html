@@ -194,9 +194,9 @@
                         Chennai's Premier Planners
                     </span>
 <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
-                        Bespoke Events <br>
-<span class="text-gradient italic">Curated by</span> <br>
-                        Sarrah &amp; Nishrin
+                        Creative Splash <br>
+<span class="text-gradient italic">Event Planners</span> <br>
+                        Chennai
                     </h1>
 </div>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0">
@@ -439,26 +439,172 @@
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
                 Ready to elevate your next celebration? Connect with us to begin curating a bespoke experience tailored exclusively to your vision.
             </p>
-<form class="max-w-md mx-auto space-y-4 text-left">
-<div>
-<input class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Your Name" type="text">
-</div>
-<div>
-<input class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm" placeholder="Email Address" type="email">
-</div>
-<div>
-<select class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm text-on-surface-variant appearance-none">
-<option value="">Select Event Type</option>
-<option value="wedding">Wedding</option>
-<option value="balloon">Balloon Decor</option>
-<option value="birthday">Birthday</option>
-<option value="other">Other</option>
-</select>
-</div>
-<button class="w-full bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-label-md hover:bg-inverse-primary transition-all duration-300 ambient-shadow mt-4" type="button">
-                    Inquire for Your Next Celebration
-                </button>
+
+<!-- Inquiry Form: sends email via Formspree + WhatsApp notification on submit -->
+<form
+  id="inquire-form"
+  action="https://formspree.io/f/xwpbpejz"
+  method="POST"
+  class="max-w-md mx-auto space-y-4 text-left"
+  novalidate
+>
+  <!-- Hidden subject line -->
+  <input type="hidden" name="_subject" value="New Event Inquiry — Creative Splash">
+  <input type="hidden" name="_next" value="">
+
+  <div>
+    <input
+      id="inq-name"
+      name="name"
+      required
+      class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm"
+      placeholder="Your Name"
+      type="text"
+      autocomplete="name"
+    >
+  </div>
+
+  <div>
+    <input
+      id="inq-email"
+      name="email"
+      required
+      class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm"
+      placeholder="Email Address"
+      type="email"
+      autocomplete="email"
+    >
+  </div>
+
+  <div>
+    <input
+      id="inq-mobile"
+      name="mobile"
+      required
+      class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm"
+      placeholder="Mobile Number"
+      type="tel"
+      autocomplete="tel"
+      pattern="[0-9+\-\s]{7,15}"
+    >
+  </div>
+
+  <div style="position:relative;">
+    <select
+      id="inq-event"
+      name="event_type"
+      required
+      class="w-full bg-white border border-outline-variant/50 rounded-full px-6 py-4 focus:outline-none focus:ring-2 focus:ring-secondary-fixed-dim focus:border-transparent font-body-md transition-shadow shadow-sm text-on-surface-variant appearance-none"
+    >
+      <option value="">Select Event Type</option>
+      <option value="Wedding">Wedding</option>
+      <option value="Balloon Decor">Balloon Decor</option>
+      <option value="Birthday">Birthday</option>
+      <option value="Corporate">Corporate Event</option>
+      <option value="Baby Shower">Baby Shower</option>
+      <option value="Other">Other</option>
+    </select>
+    <span style="position:absolute;right:20px;top:50%;transform:translateY(-50%);pointer-events:none;color:#735c00;" class="material-symbols-outlined text-base">expand_more</span>
+  </div>
+
+  <!-- Success / error message area -->
+  <div id="inq-feedback" style="display:none;" class="rounded-2xl px-6 py-4 text-sm font-body-md text-center"></div>
+
+  <button
+    id="inq-submit"
+    type="submit"
+    class="w-full bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-label-md hover:bg-inverse-primary transition-all duration-300 ambient-shadow mt-4 flex items-center justify-center gap-2"
+  >
+    <span id="inq-btn-text">Inquire for Your Next Celebration</span>
+    <span id="inq-spinner" class="material-symbols-outlined text-base animate-spin" style="display:none;">progress_activity</span>
+  </button>
 </form>
+
+<script>
+(function(){
+  var form = document.getElementById('inquire-form');
+  var feedback = document.getElementById('inq-feedback');
+  var btnText = document.getElementById('inq-btn-text');
+  var spinner = document.getElementById('inq-spinner');
+  var submitBtn = document.getElementById('inq-submit');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Validate
+    var name = document.getElementById('inq-name').value.trim();
+    var email = document.getElementById('inq-email').value.trim();
+    var mobile = document.getElementById('inq-mobile').value.trim();
+    var eventType = document.getElementById('inq-event').value;
+
+    if(!name || !email || !mobile || !eventType){
+      feedback.style.display = 'block';
+      feedback.style.background = '#ffdad6';
+      feedback.style.color = '#93000a';
+      feedback.textContent = 'Please fill in all fields before submitting.';
+      return;
+    }
+
+    // Show loading state
+    btnText.textContent = 'Sending...';
+    spinner.style.display = 'inline';
+    submitBtn.disabled = true;
+
+    // Submit to Formspree (sends email to creativesplashevpl@gmail.com)
+    var data = new FormData(form);
+    fetch('https://formspree.io/f/xwpbpejz', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res){
+      if(res.ok){
+        // Show success
+        feedback.style.display = 'block';
+        feedback.style.background = '#d4f7dc';
+        feedback.style.color = '#1a5c2a';
+        feedback.innerHTML = '✅ Inquiry sent! We will be in touch soon.';
+        form.reset();
+        btnText.textContent = 'Inquiry Sent!';
+        spinner.style.display = 'none';
+
+        // Also open WhatsApp with pre-filled message
+        var waMsg = encodeURIComponent(
+          '🌟 New Event Inquiry — Creative Splash\n\n'
+          + 'Name: ' + name + '\n'
+          + 'Email: ' + email + '\n'
+          + 'Mobile: ' + mobile + '\n'
+          + 'Event Type: ' + eventType + '\n\n'
+          + 'Received from the website inquiry form.'
+        );
+        setTimeout(function(){
+          window.open('https://wa.me/918939789880?text=' + waMsg, '_blank');
+        }, 800);
+
+        // Reset button after 4 seconds
+        setTimeout(function(){
+          btnText.textContent = 'Inquire for Your Next Celebration';
+          submitBtn.disabled = false;
+        }, 4000);
+      } else {
+        return res.json().then(function(d){
+          throw new Error(d && d.errors ? d.errors.map(function(e){ return e.message; }).join(', ') : 'Submission failed');
+        });
+      }
+    })
+    .catch(function(err){
+      feedback.style.display = 'block';
+      feedback.style.background = '#ffdad6';
+      feedback.style.color = '#93000a';
+      feedback.textContent = '❌ Something went wrong. Please WhatsApp us directly at +91 89397 89880.';
+      btnText.textContent = 'Inquire for Your Next Celebration';
+      spinner.style.display = 'none';
+      submitBtn.disabled = false;
+    });
+  });
+})();
+</script>
+
 </div>
 <!-- Decorative subtle shapes -->
 <div class="absolute top-10 left-10 w-32 h-32 rounded-full border border-secondary/20 pointer-events-none"></div>
