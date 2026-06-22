@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="logo.jpg" type="image/jpeg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Portfolio | Creative Splash Event Planners Chennai</title>
+<meta name="description" content="Explore Creative Splash's portfolio — stunning weddings, birthday celebrations, corporate events and balloon décor across Chennai. Real work by Sarrah & Nishrin.">
+<meta property="og:title" content="Our Portfolio | Creative Splash Event Planners">
+<meta property="og:description" content="Gallery of bespoke events — weddings, birthdays, corporate, balloon décor — curated by Creative Splash, Chennai.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="creative Splash events/IMG20260514175212.jpg">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#735c00",
+          "primary-container": "#d4af37",
+          "on-primary-container": "#554300",
+          "secondary": "#795465",
+          "tertiary": "#b52045",
+          "surface": "#fbf9f4",
+          "surface-container": "#f0eee9",
+          "surface-container-low": "#f5f3ee",
+          "surface-variant": "#e4e2dd",
+          "on-surface": "#1b1c19",
+          "on-surface-variant": "#4d4635",
+          "outline-variant": "#d0c5af",
+          "secondary-container": "#fdcde1",
+          "secondary-fixed-dim": "#e9bacd",
+          "primary-fixed": "#ffe088",
+          "inverse-primary": "#e9c349",
+          "background": "#fbf9f4",
+        },
+        fontFamily: {
+          "display": ["Playfair Display", "serif"],
+          "body": ["Montserrat", "sans-serif"],
+        }
+      }
+    }
+  };
+</script>
+<style>
+  body { font-family: 'Montserrat', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .fill-icon { font-variation-settings: 'FILL' 1; }
+
+  .glass-panel {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #735c00, #b52045);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gallery grid */
+  .gallery-grid {
+    columns: 1;
+    column-gap: 1.5rem;
+  }
+  @media (min-width: 640px) { .gallery-grid { columns: 2; } }
+  @media (min-width: 1024px) { .gallery-grid { columns: 3; } }
+
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+  .gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.06);
+  }
+  .gallery-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(27,28,25,0.7) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+  }
+  .gallery-item:hover .overlay {
+    opacity: 1;
+  }
+
+  /* Filter tabs */
+  .filter-btn {
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1.5px solid #d0c5af;
+    background: #fbf9f4;
+    color: #4d4635;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.04em;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: #735c00;
+    color: #fff;
+    border-color: #735c00;
+    box-shadow: 0 4px 16px rgba(115,92,0,0.25);
+  }
+
+  /* Lightbox */
+  #lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  }
+  #lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: background 0.2s;
+  }
+  #lightbox-close:hover { background: rgba(255,255,255,0.2); }
+  #lightbox-caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background: rgba(0,0,0,0.5);
+    padding: 6px 20px;
+    border-radius: 9999px;
+    white-space: nowrap;
+  }
+  #lightbox-prev, #lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 1.5rem;
+  }
+  #lightbox-prev { left: 1rem; }
+  #lightbox-next { right: 1rem; }
+  #lightbox-prev:hover, #lightbox-next:hover { background: rgba(255,255,255,0.25); }
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300" id="main-nav">
+  <div class="flex items-center justify-between px-5 md:px-16 py-4 max-w-screen-xl mx-auto">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <img src="logo.jpg" alt="Creative Splash" style="height:48px;width:auto;object-fit:contain;">
+      <span class="hidden lg:block font-display text-xl text-gradient uppercase tracking-widest">Creative Splash</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="weddings.html" class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold">Weddings</a>
+      <a href="balloons.html" class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold">Balloon Decor</a>
+      <a href="gallery.html" class="text-primary text-sm font-semibold border-b-2 border-primary pb-0.5">Gallery</a>
+      <a href="corporate_home.html" class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold">Corporate</a>
+    </div>
+    <a href="contact.html" class="hidden md:inline-flex items-center justify-center bg-primary-container text-on-primary-container px-6 py-3 rounded-full text-sm font-bold hover:bg-inverse-primary transition-colors shadow-sm">
+      Inquire Now
+    </a>
+    <button class="md:hidden text-primary p-2" aria-label="Toggle Menu" id="mobile-menu-btn">
+      <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div class="hidden md:hidden bg-white border-t border-outline-variant px-5 py-4 space-y-3" id="mobile-menu">
+    <a href="index.html" class="block text-on-surface-variant hover:text-primary text-sm font-semibold py-2">Home</a>
+    <a href="weddings.html" class="block text-on-surface-variant hover:text-primary text-sm font-semibold py-2">Weddings</a>
+    <a href="balloons.html" class="block text-on-surface-variant hover:text-primary text-sm font-semibold py-2">Balloon Decor</a>
+    <a href="gallery.html" class="block text-primary text-sm font-semibold py-2">Gallery</a>
+    <a href="corporate_home.html" class="block text-on-surface-variant hover:text-primary text-sm font-semibold py-2">Corporate</a>
+    <a href="contact.html" class="block bg-primary-container text-on-primary-container px-6 py-3 rounded-full text-sm font-bold text-center mt-2">Inquire Now</a>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<header class="relative pt-32 pb-16 px-5 md:px-16 bg-surface-container-low overflow-hidden">
+  <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,_#ffd8e7_0%,_transparent_40%),_radial-gradient(circle_at_bottom_left,_#ffe088_0%,_transparent_40%)]"></div>
+  <div class="max-w-screen-xl mx-auto text-center relative z-10">
+    <span class="inline-block text-secondary font-semibold text-xs uppercase tracking-widest px-4 py-2 rounded-full border border-secondary/20 bg-secondary/5 mb-4">Our Portfolio</span>
+    <h1 class="font-display text-4xl md:text-6xl text-on-surface mb-6 leading-tight">
+      Every Event, a <span class="text-gradient italic">Masterpiece</span>
+    </h1>
+    <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">
+      A glimpse into the world of bespoke celebrations curated by Sarrah &amp; Nishrin — from intimate birthdays to grand weddings and corporate galas.
+    </p>
+  </div>
+</header>
+
+<!-- Filter Tabs -->
+<section class="py-8 px-5 md:px-16 bg-surface sticky top-16 z-40 border-b border-outline-variant/30 shadow-sm">
+  <div class="max-w-screen-xl mx-auto flex items-center gap-3 flex-wrap justify-center">
+    <button class="filter-btn active" data-filter="all">All Events</button>
+    <button class="filter-btn" data-filter="wedding">Weddings &amp; Stages</button>
+    <button class="filter-btn" data-filter="birthday">Birthdays</button>
+    <button class="filter-btn" data-filter="corporate">Corporate</button>
+    <button class="filter-btn" data-filter="balloon">Balloon Décor</button>
+  </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="py-12 px-5 md:px-16 bg-surface-container-low">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="gallery-grid" id="gallery-grid">
+
+      <!-- WEDDING / STAGE DECOR -->
+      <div class="gallery-item" data-category="wedding" data-caption="Elegant Red Arch Wedding Stage">
+        <img src="creative%20Splash%20events/IMG20260514175212.jpg" alt="Elegant red arch wedding stage with floral arrangements and chandelier, Creative Splash Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Elegant Arch Stage</p>
+            <p class="text-white/70 text-xs">Wedding Décor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="wedding" data-caption="Moroccan-Theme Wedding Stage with Blue Arch">
+        <img src="creative%20Splash%20events/20241128_173910.jpg" alt="Moroccan themed wedding stage with blue arches and floral decor, Creative Splash Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Moroccan Theme Stage</p>
+            <p class="text-white/70 text-xs">Wedding Décor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="wedding" data-caption="Grand Wedding Stage Setup">
+        <img src="creative%20Splash%20events/IMG20260607093644.jpg" alt="Grand wedding stage setup by Creative Splash event planners Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Grand Stage Setup</p>
+            <p class="text-white/70 text-xs">Wedding Décor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="wedding" data-caption="Premium Wedding Hall Decor">
+        <img src="creative%20Splash%20events/IMG20260608173442.jpg" alt="Premium wedding hall decoration by Creative Splash Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Premium Hall Décor</p>
+            <p class="text-white/70 text-xs">Wedding Décor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="wedding" data-caption="Royal Wedding Stage & Floral Arrangement">
+        <img src="creative%20Splash%20events/MBR_5596.jpg" alt="Royal wedding stage with floral arrangement by Creative Splash Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Royal Floral Stage</p>
+            <p class="text-white/70 text-xs">Wedding Décor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="wedding" data-caption="Intimate Wedding Reception Decor">
+        <img src="creative%20Splash%20events/IMG_1338.JPG" alt="Intimate wedding reception décor by Creative Splash event planners" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Wedding Reception</p>
+            <p class="text-white/70 text-xs">Wedding Décor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="wedding" data-caption="Bespoke Wedding Stage Design">
+        <img src="creative%20Splash%20events/IMG_9091.JPG" alt="Bespoke wedding stage design by Creative Splash Creative Planners Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Bespoke Stage Design</p>
+            <p class="text-white/70 text-xs">Wedding Décor</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BIRTHDAY PARTIES -->
+      <div class="gallery-item" data-category="birthday" data-caption="Asher's Winter Wonderland 1st Birthday">
+        <img src="creative%20Splash%20events/IMG_1787.JPG" alt="Asher's Christmas winter wonderland 1st birthday party by Creative Splash Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Winter Wonderland 1st Birthday</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday balloon" data-caption="Muhammad Hamza's Space-Themed Birthday">
+        <img src="creative%20Splash%20events/IMG_5656.jpg" alt="Muhammad Hamza space themed first birthday with balloon decor rockets and astronauts, Creative Splash" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Space Explorer Birthday</p>
+            <p class="text-white/70 text-xs">Birthday · Balloon Décor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Safari Adventure Birthday Theme">
+        <img src="creative%20Splash%20events/DSC08671.JPG" alt="Safari themed birthday party decoration by Creative Splash event planners Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Safari Adventure Birthday</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Fairy Tale Birthday Party">
+        <img src="creative%20Splash%20events/163A1698.jpg" alt="Fairy tale themed birthday party by Creative Splash creative planners Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Fairy Tale Birthday</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Butterfly & Floral Birthday Theme">
+        <img src="creative%20Splash%20events/IMG_4251.jpg" alt="Butterfly and floral birthday theme by Creative Splash event planners" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Butterfly Garden Birthday</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Golden Carriage Birthday Party">
+        <img src="creative%20Splash%20events/IMG_4339.jpg" alt="Golden carriage princess birthday party by Creative Splash event planners Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Golden Carriage Birthday</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Vibrant Birthday Celebration">
+        <img src="creative%20Splash%20events/MBR_4390.jpg" alt="Vibrant colourful birthday celebration by Creative Splash event planners Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Vibrant Birthday Celebration</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Milestone Birthday Décor">
+        <img src="creative%20Splash%20events/IMG_8242.jpg" alt="Milestone birthday decoration by Creative Splash event planners" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Milestone Birthday</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Birthday Event Showcase">
+        <img src="creative%20Splash%20events/20240810_175855.jpg" alt="Birthday event showcase by Creative Splash event planners Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Birthday Showcase</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Themed Birthday Celebration">
+        <img src="creative%20Splash%20events/20241011_172216.jpg" alt="Themed birthday celebration setup by Creative Splash Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Themed Birthday</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Creative Birthday Event Setup">
+        <img src="creative%20Splash%20events/20241027_183035.jpg" alt="Creative birthday event setup by Creative Splash planners" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Creative Birthday Setup</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="birthday" data-caption="Celebration Décor Highlights">
+        <img src="creative%20Splash%20events/20250802_172442.jpg" alt="Celebration decor highlights by Creative Splash event planners Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Celebration Highlights</p>
+            <p class="text-white/70 text-xs">Birthday Party</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CORPORATE EVENTS -->
+      <div class="gallery-item" data-category="corporate" data-caption="Corporate Gala — Fairy Lights Venue">
+        <img src="creative%20Splash%20events/MBR_2950.jpg" alt="Corporate event venue decorated with fairy lights and draping by Creative Splash Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Corporate Gala Venue</p>
+            <p class="text-white/70 text-xs">Corporate Event</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="corporate" data-caption="Premium Corporate Event Styling">
+        <img src="creative%20Splash%20events/MBR_2951.jpg" alt="Premium corporate event styling with ambient lighting by Creative Splash planners" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Premium Corporate Styling</p>
+            <p class="text-white/70 text-xs">Corporate Event</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="corporate" data-caption="Corporate Event Setup">
+        <img src="creative%20Splash%20events/MBR_8069.jpg" alt="Corporate event setup by Creative Splash event planners Chennai" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Corporate Setup</p>
+            <p class="text-white/70 text-xs">Corporate Event</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="corporate" data-caption="Brand Event Décor">
+        <img src="creative%20Splash%20events/IMG-20260602-WA0027.jpg" alt="Brand corporate event decor by Creative Splash creative planners" loading="lazy">
+        <div class="overlay">
+          <div>
+            <p class="text-white font-semibold text-sm">Brand Event Décor</p>
+            <p class="text-white/70 text-xs">Corporate Event</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16 py-12 glass-panel rounded-2xl border border-outline-variant/30 px-8">
+      <h2 class="font-display text-3xl md:text-4xl text-on-surface mb-4">Ready to create your story?</h2>
+      <p class="text-on-surface-variant text-lg mb-8 max-w-xl mx-auto">Let's design an event that your guests will cherish forever. Reach out to Sarrah &amp; Nishrin today.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="inline-flex items-center justify-center bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-bold text-sm hover:bg-inverse-primary transition-all duration-300 shadow-md hover:-translate-y-1">
+          Start Planning Together
+        </a>
+        <a href="https://wa.me/message/BBYOVRCJTAMGO1" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-sm hover:bg-[#1ebe5d] transition-all duration-300 shadow-md hover:-translate-y-1">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.528 5.858L.057 23.428a.5.5 0 0 0 .609.61l5.64-1.47A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.885 9.885 0 0 1-5.03-1.374l-.361-.214-3.741.975.999-3.648-.235-.374A9.9 9.9 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-label="Image lightbox">
+  <button id="lightbox-close" aria-label="Close lightbox"><span class="material-symbols-outlined">close</span></button>
+  <button id="lightbox-prev" aria-label="Previous image"><span class="material-symbols-outlined">chevron_left</span></button>
+  <img id="lightbox-img" src="" alt="">
+  <button id="lightbox-next" aria-label="Next image"><span class="material-symbols-outlined">chevron_right</span></button>
+  <div id="lightbox-caption"></div>
+</div>
+
+<!-- Footer -->
+<footer style="background:#f5f3ee;border-top:1px solid #e4e2dd;margin-top:0;">
+  <div style="max-width:1280px;margin:0 auto;padding:48px 64px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;" class="px-5 md:px-16">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <a href="index.html"><img src="logo.jpg" alt="Creative Splash" style="height:52px;width:auto;object-fit:contain;"></a>
+      <p style="font-family:Montserrat,sans-serif;font-size:14px;color:#4d4635;line-height:1.7;max-width:220px;">Bespoke event planning &amp; premium décor curations in Chennai, Coimbatore &amp; Vellore.</p>
+      <div style="display:flex;gap:12px;margin-top:4px;">
+        <a href="https://www.instagram.com/creative_splash_event_planners" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);box-shadow:0 2px 8px rgba(220,39,67,0.3);" title="Instagram">
+          <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/message/BBYOVRCJTAMGO1" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#25D366;box-shadow:0 2px 8px rgba(37,211,102,0.3);" title="WhatsApp">
+          <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.528 5.858L.057 23.428a.5.5 0 0 0 .609.61l5.64-1.47A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.885 9.885 0 0 1-5.03-1.374l-.361-.214-3.741.975.999-3.648-.235-.374A9.9 9.9 0 0 1 2.1 12C2.1 6.533 6.533 2.1 12 2.1S21.9 6.533 21.9 12 17.467 21.9 12 21.9z"/></svg>
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Creative+Splash+Event+Planners+Royapuram+Chennai" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#EA4335;box-shadow:0 2px 8px rgba(234,67,53,0.3);" title="Google Maps">
+          <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M12 0C7.802 0 4 3.403 4 7.602 4 11.8 7.469 16.812 12 24c4.531-7.188 8-12.2 8-16.398C20 3.403 16.199 0 12 0zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-family:Playfair Display,serif;font-size:16px;font-weight:600;color:#1b1c19;margin-bottom:16px;">Quick Links</h4>
+      <nav style="display:flex;flex-direction:column;gap:10px;">
+        <a href="index.html" style="font-family:Montserrat,sans-serif;font-size:14px;color:#4d4635;text-decoration:none;" onmouseover="this.style.color='#735c00'" onmouseout="this.style.color='#4d4635'">Home</a>
+        <a href="weddings.html" style="font-family:Montserrat,sans-serif;font-size:14px;color:#4d4635;text-decoration:none;" onmouseover="this.style.color='#735c00'" onmouseout="this.style.color='#4d4635'">Weddings</a>
+        <a href="balloons.html" style="font-family:Montserrat,sans-serif;font-size:14px;color:#4d4635;text-decoration:none;" onmouseover="this.style.color='#735c00'" onmouseout="this.style.color='#4d4635'">Balloon Décor</a>
+        <a href="gallery.html" style="font-family:Montserrat,sans-serif;font-size:14px;color:#735c00;text-decoration:none;font-weight:600;">Our Portfolio</a>
+        <a href="corporate_home.html" style="font-family:Montserrat,sans-serif;font-size:14px;color:#4d4635;text-decoration:none;" onmouseover="this.style.color='#735c00'" onmouseout="this.style.color='#4d4635'">Corporate Events</a>
+        <a href="contact.html" style="font-family:Montserrat,sans-serif;font-size:14px;color:#4d4635;text-decoration:none;" onmouseover="this.style.color='#735c00'" onmouseout="this.style.color='#4d4635'">Contact Us</a>
+      </nav>
+    </div>
+    <div>
+      <h4 style="font-family:Playfair Display,serif;font-size:16px;font-weight:600;color:#1b1c19;margin-bottom:16px;">Get In Touch</h4>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <a href="tel:09962664810" style="display:flex;align-items:center;gap:8px;font-family:Montserrat,sans-serif;font-size:14px;color:#4d4635;text-decoration:none;">📞 09962664810</a>
+        <a href="mailto:creativesplashevpl@gmail.com" style="display:flex;align-items:center;gap:8px;font-family:Montserrat,sans-serif;font-size:14px;color:#4d4635;text-decoration:none;">✉️ creativesplashevpl@gmail.com</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Creative+Splash+Event+Planners+Royapuram+Chennai" target="_blank" style="display:flex;align-items:flex-start;gap:8px;font-family:Montserrat,sans-serif;font-size:14px;color:#4d4635;text-decoration:none;">📍 22/1, Venkatesan St, Royapuram, Chennai 600013</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid #e4e2dd;padding:20px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:1280px;margin:0 auto;" class="px-5 md:px-16">
+    <p style="font-family:Montserrat,sans-serif;font-size:12px;color:#7f7663;">© 2025 Creative Splash Event Planners. All rights reserved.</p>
+    <p style="font-family:Montserrat,sans-serif;font-size:12px;color:#7f7663;">Chennai · Coimbatore · Vellore</p>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle
+document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+// --- Gallery Filter ---
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    galleryItems.forEach(item => {
+      const cats = item.dataset.category || '';
+      if (filter === 'all' || cats.includes(filter)) {
+        item.style.display = '';
+        item.style.animation = 'fadeIn 0.4s ease forwards';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+// --- Lightbox ---
+let currentIndex = 0;
+let visibleItems = [];
+
+function getVisibleItems() {
+  return Array.from(galleryItems).filter(i => i.style.display !== 'none');
+}
+
+function openLightbox(index) {
+  visibleItems = getVisibleItems();
+  currentIndex = index;
+  const item = visibleItems[currentIndex];
+  const img = item.querySelector('img');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox-img').alt = img.alt;
+  document.getElementById('lightbox-caption').textContent = item.dataset.caption || '';
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function navigateLightbox(dir) {
+  visibleItems = getVisibleItems();
+  currentIndex = (currentIndex + dir + visibleItems.length) % visibleItems.length;
+  const item = visibleItems[currentIndex];
+  const img = item.querySelector('img');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox-img').alt = img.alt;
+  document.getElementById('lightbox-caption').textContent = item.dataset.caption || '';
+}
+
+galleryItems.forEach((item, i) => {
+  item.addEventListener('click', () => {
+    visibleItems = getVisibleItems();
+    const visIdx = visibleItems.indexOf(item);
+    openLightbox(visIdx);
+  });
+});
+
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox-prev').addEventListener('click', () => navigateLightbox(-1));
+document.getElementById('lightbox-next').addEventListener('click', () => navigateLightbox(1));
+
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') navigateLightbox(-1);
+  if (e.key === 'ArrowRight') navigateLightbox(1);
+});
+</script>
+</body>
+</html>
